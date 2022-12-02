@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "id": "snippet_template",
+  "name": "Snippet Template",
+  "author": "remnote",
+  "repoUrl": "https://www.google.com",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  },
+  "theme": [],
+  "enableOnMobile": false,
+  "description": "",
+  "requestNative": false,
+  "requiredScopes": [
+    {
+      "type": "All",
+      "level": "ReadCreateModify"
+    }
+  ]
+}
