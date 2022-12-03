@@ -1,0 +1,31 @@
+{
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "liveSassCompile.settings.formats": [
+        {
+            "extensionName": ".css",
+            "format": "compressed",
+            "savePath": "~/..",
+        },
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "/**/node_modules/**",
+        "/.vscode/**",
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.watchOnLaunch": false,
+    "liveSassCompile.settings.compileOnWatch": false,
+    "liveSassCompile.settings.autoprefix": [
+        "defaults"
+    ],
+    "[scss]": {
+        "editor.foldingStrategy": "indentation",
+        "editor.suggest.insertMode": "replace",
+        "editor.formatOnSave": false
+    },
+    "[css]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnType": true
+    },
+}
