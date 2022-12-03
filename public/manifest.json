@@ -1,18 +1,18 @@
 {
   "manifestVersion": 1,
-  "id": "snippet_template",
-  "name": "Snippet Template",
-  "author": "remnote",
-  "repoUrl": "https://www.google.com",
+  "id": "browneyedsoul-RemTree",
+  "name": "Rem Tree",
+  "author": "Min-Ki Park",
+  "repoUrl": "https://github.com/browneyedsoul/RemNote-RemTree",
   "version": {
     "major": 0,
-    "minor": 0,
+    "minor": 1,
     "patch": 1
   },
   "theme": [],
-  "enableOnMobile": false,
-  "description": "",
-  "requestNative": false,
+  "enableOnMobile": true,
+  "description": "Structure your thoughts easily with Rem Tree!",
+  "requestNative": true,
   "requiredScopes": [
     {
       "type": "All",
