@@ -1,0 +1,369 @@
+:root {
+    --border-color: #DDD;
+    --border-color-dark: #747474;
+    --darkmode-background: #2F3437;
+}
+
+// Global
+    [data-rem-container-tags~="tree"],
+    [data-rem-container-tags~="treec"] {
+        .whitespace-pre-wrap {
+            white-space: pre;
+        }
+        .animate-zoom-into-bullet.flex.flex-col {
+            display: block;
+        }
+        .rem {
+            min-width: calc(100% + 1rem);
+            .EditorContainer {
+                position: relative;
+                z-index: 4;
+            }
+        }
+        .float-end {
+            > .rn-editor__rem__merge {
+                display: none;
+            }
+            .backlink-counter {
+                opacity: .3;
+            }
+            .rn-tag__close {
+                opacity: .3;
+            }
+        }
+        .rem-reference-container {
+            .rem-reference {
+                .RichTextViewer {
+                    display: inline-flex;
+                }
+            }
+        }
+        // Interim remedy
+            .mr-\[100px\] {
+                margin-right: unset;
+            }
+    }
+// Portal Treatment
+    #document {
+        [data-rem-container-tags~="tree"],
+        [data-rem-container-tags~="treec"] {
+            .animate-zoom-into-bullet:not(.animate-zoom-into-bullet.bg-transparent) {
+                display: block;
+            }
+            .animate-zoom-into-bullet.portal-tree-node-box {
+                margin-left: 1rem;
+                align-items: center;
+                .tree-node--parent {
+                    &::before {
+                        background-color: transparent !important;
+                    }
+                }
+            }
+        }
+    }
+    .dark {
+        [data-rem-container-tags~="tree"],
+        [data-rem-container-tags~="treec"] {
+            .animate-zoom-into-bullet.portal-tree-node-box {
+                .tree-node--parent {
+                    &::before {
+                        background-color: var(--darkmode-background);
+                    }
+                }
+            }
+        }
+    }
+
+#hierarchy-editor {
+    [data-rem-container-tags~="tree"], %tree {
+        display: flex;
+        flex-direction: row;
+        line-height: 160%;
+        margin: 0.5rem 0 0.5rem 1.6rem;
+        padding: 1rem 1rem 1rem 0;
+        overflow-x: visible;
+        overflow-y: hidden;
+        white-space: pre;
+        // Scrollbar
+            &::-webkit-scrollbar-thumb {
+                background-color: #EEE;
+                border-radius: 2px;
+            }
+            &::-webkit-scrollbar-track {
+                margin-right: 0;
+            }
+        // rem container
+            .rem-button__container {
+                z-index: 5;
+            }
+        // Parent
+            div.tree-node--parent:not(.tree-node--parent.tree-node--automatic-search-portal-header) {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+
+                .rem-text {
+                    .EditorContainer {
+                        white-space: pre !important;
+
+                        .RichTextViewer {
+                            white-space: nowrap;
+                        }
+
+                        .last_node_down_arrow,
+                        .whitespace-pre {
+                            display: none;
+                        }
+                    }
+                }
+                // Tag Declutter
+                    [data-rem-tags~="tree"],
+                    [data-rem-tags~="treec"] {
+                        position: relative;
+                        right: 0;
+                        // Tag Declutter
+                            .hierarchy-editor__tag-bar__tag {
+                                background-color: transparent !important;
+
+                                span {
+                                    display: none;
+                                }
+
+                                .hierarchy-editor__tag-bar__tag__delete {
+                                    opacity: .3;
+                                }
+                            }
+                    }
+            }
+            .animate-zoom-into-bullet:last-of-type {
+                > div.tree-node--parent:not(.tree-node--parent.tree-node--automatic-search-portal-header) {
+                    align-items: flex-start;
+
+                    &::before {
+                        content: "";
+                        width: 28px;
+                        background-color: #FFF;
+                        height: 100%;
+                        position: absolute;
+                        z-index: 2;
+                        left: -2px;
+                        border-top: 1px solid var(--border-color);
+                        margin-top: 16px;
+                    }
+                }
+            }
+
+        // Flexbox
+            .animate-zoom-into-bullet {
+                display: flex;
+                flex-direction: row;
+            }
+        // Children - One Child Tree
+            div.tree-node--children {
+                // margin-left: 0;
+
+                .backlink-counter {
+                    opacity: .4;
+                }
+            }
+
+            div.tree-node--children:not(.tree-node--children:empty) {
+                display: inline-block;
+                z-index: 0;
+                border-left: 1px solid var(--border-color);
+                position: relative;
+                // Crumbs Remover
+                &::before {
+                    content: "";
+                    padding-right: 24px;
+                    padding-top: 0;
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    left: -0.15rem;
+                    height: 1rem;
+                    border-top: unset;
+                    border-right: unset;
+                    border-bottom: 1px solid var(--border-color);
+                    border-left: 4px solid #FFF;
+                }
+                &::after {
+                    content: "";
+                    padding-right: 24px;
+                    padding-top: 0;
+                    position: absolute;
+                    z-index: 0;
+                    bottom: 0;
+                    left: -0.15rem;
+                    height: 1rem;
+                    border-bottom: unset;
+                    border-right: unset;
+                    border-top: 1px solid var(--border-color);
+                    border-left: 4px solid #FFF;
+                }
+
+                .tree-node-container {
+                    display: flex;
+                    z-index: 0;
+
+                    &:first-child:not(:only-child) {
+                        >.tree-node--parent {
+                            display: flex;
+                            align-items: baseline;
+                        }
+                    }
+
+                    &:last-child:not(:only-child) {
+                        > .tree-node--parent {
+                            display: flex;
+                            // align-items: flex-end;
+                        }
+                    }
+
+                    div.tree-node--children:only-of-type {
+                        display: none;
+                    }
+                }
+            }
+        // Border Declutter
+            div.tree-node--children {
+                &:empty {
+                    border-left: unset;
+                }
+            }
+        // Width tuning
+            .tree-node--parent.flex-grow {
+                flex-grow: unset;
+            }
+    }
+}
+// Darkmode Compatibility
+    .dark {
+        #hierarchy-editor {
+            [data-rem-container-tags~="tree"], %tree-dark {
+                background-color: #2F3437;
+
+                #hierarchy-editor {
+                    .TreeNode {
+                        border-color: var(--border-color-dark);
+                    }
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #5A666A;
+                }
+
+                .animate-zoom-into-bullet:last-of-type {
+                    > div.tree-node--parent:not(.tree-node--parent.tree-node--automatic-search-portal-header) {
+                        &::before {
+                            content: "";
+                            width: 28px;
+                            background-color: var(--darkmode-background);
+                            height: 100%;
+                            position: absolute;
+                            z-index: 2;
+                            left: -2px;
+                            border-top: 1px solid var(--border-color-dark);
+                            margin-top: 16px;
+                        }
+                    }
+                }
+                div.tree-node--parent {
+                    &::before {
+                        background-color: var(--darkmode-background) !important;
+                    }
+                }
+                div.tree-node--children {
+                    .tree-node-container:only-child {
+                        &::before {
+                            border-bottom: 5rem solid var(--darkmode-background);
+                            border-left: 27px solid var(--darkmode-background);
+                            top: 0;
+                        }
+                    }
+                }
+                div.tree-node--children:not(.tree-node--children:empty) {
+                    border-left: 1px solid var(--border-color-dark);
+                    // Crumbs Remover
+                    &::before {
+                        content: "";
+                        padding-right: 24px;
+                        padding-top: 0;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: -0.15rem;
+                        height: 1rem;
+                        border-top: unset;
+                        border-right: unset;
+                        border-bottom: 1px solid var(--border-color-dark);
+                        border-left: 4px solid var(--darkmode-background);
+                    }
+                    &::after {
+                        content: "";
+                        padding-right: 24px;
+                        padding-top: 0;
+                        position: absolute;
+                        z-index: 0;
+                        bottom: 0;
+                        left: -0.15rem;
+                        height: 1rem;
+                        border-bottom: unset;
+                        border-right: unset;
+                        border-top: 1px solid var(--border-color-dark);
+                        border-left: 4px solid var(--darkmode-background);
+                    }
+                }
+            }
+        }
+    }
+
+
+[data-rem-container-tags~="treec"] {
+    @extend %tree;
+    border: 0.1rem solid var(--border-color);
+    border-radius: 4px;
+}
+.dark {
+    [data-rem-container-tags~="treec"] {
+        @extend %tree-dark;
+        border: 0.1rem solid var(--border-color-dark);
+    }
+}
+
+[data-rem-container-tags~="tree"],
+[data-rem-container-tags~="treec"] {
+    &[data-rem-container-tags~="w100"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 100px;}
+    &[data-rem-container-tags~="w200"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 200px;}
+    &[data-rem-container-tags~="w300"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 300px;}
+    &[data-rem-container-tags~="w400"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 400px;}
+    &[data-rem-container-tags~="w500"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 500px;}
+    &[data-rem-container-tags~="w600"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 600px;}
+    &[data-rem-container-tags~="w700"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 700px;}
+    &[data-rem-container-tags~="w800"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 800px;}
+    &[data-rem-container-tags~="w900"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 900px;}
+    &[data-rem-container-tags~="w1000"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 1000px;}
+
+    [data-rem-container-tags~="w100"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 100px;}
+    [data-rem-container-tags~="w200"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 200px;}
+    [data-rem-container-tags~="w300"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 300px;}
+    [data-rem-container-tags~="w400"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 400px;}
+    [data-rem-container-tags~="w500"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 500px;}
+    [data-rem-container-tags~="w600"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 600px;}
+    [data-rem-container-tags~="w700"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 700px;}
+    [data-rem-container-tags~="w800"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 800px;}
+    [data-rem-container-tags~="w900"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 900px;}
+    [data-rem-container-tags~="w1000"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 1000px;}
+
+    &[data-rem-container-tags~="w300"],
+    &[data-rem-container-tags~="w600"],
+    &[data-rem-container-tags~="w900"],
+    [data-rem-container-tags~="w300"],
+    [data-rem-container-tags~="w600"],
+    [data-rem-container-tags~="w900"] {
+        > div.tree-node--children {
+            overflow-x: unset;
+            white-space: unset;
+        }
+    }
+}
