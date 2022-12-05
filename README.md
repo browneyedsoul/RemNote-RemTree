@@ -4,7 +4,7 @@
 
 - Transform your Rem hierarchies into tree diagrams!
 
-![details](./public/1.webp)
+![details](https://github.com/browneyedsoul/RemNote-RemTree/raw/main/public/1.webp)
 
 ## Quick Start Guide
 
