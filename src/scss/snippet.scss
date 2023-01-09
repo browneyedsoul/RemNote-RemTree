@@ -145,7 +145,7 @@
                         background-color: #FFF;
                         height: 100%;
                         position: absolute;
-                        z-index: 2;
+                        z-index: 1;
                         left: -2px;
                         border-top: 1px solid var(--tree-border);
                         margin-top: 16px;
@@ -261,7 +261,7 @@
                             background-color: var(--tree-bg-dark);
                             height: 100%;
                             position: absolute;
-                            z-index: 2;
+                            z-index: 1;
                             left: -2px;
                             border-top: 1px solid var(--tree-border-dark);
                             margin-top: 16px;
