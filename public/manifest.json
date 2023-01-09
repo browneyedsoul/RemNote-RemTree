@@ -5,9 +5,9 @@
   "author": "Min-Ki Park",
   "repoUrl": "https://github.com/browneyedsoul/RemNote-RemTree",
   "version": {
-    "major": 0,
-    "minor": 1,
-    "patch": 2
+    "major": 1,
+    "minor": 0,
+    "patch": 0
   },
   "theme": [],
   "enableOnMobile": true,
