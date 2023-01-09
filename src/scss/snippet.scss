@@ -1,7 +1,7 @@
 :root {
-    --border-color: #DDD;
-    --border-color-dark: #747474;
-    --darkmode-background: #2F3437;
+    --tree-border: #DDD;
+    --tree-border-dark: #535353;
+    --tree-bg-dark: #23232A;
 }
 
 // Global
@@ -67,7 +67,7 @@
             .animate-zoom-into-bullet.portal-tree-node-box {
                 .tree-node--parent {
                     &::before {
-                        background-color: var(--darkmode-background);
+                        background-color: var(--tree-bg-dark);
                     }
                 }
             }
@@ -147,7 +147,7 @@
                         position: absolute;
                         z-index: 2;
                         left: -2px;
-                        border-top: 1px solid var(--border-color);
+                        border-top: 1px solid var(--tree-border);
                         margin-top: 16px;
                     }
                 }
@@ -170,7 +170,7 @@
             div.tree-node--children:not(.tree-node--children:empty) {
                 display: inline-block;
                 z-index: 0;
-                border-left: 1px solid var(--border-color);
+                border-left: 1px solid var(--tree-border);
                 position: relative;
                 // Crumbs Remover
                 &::before {
@@ -184,7 +184,7 @@
                     height: 1rem;
                     border-top: unset;
                     border-right: unset;
-                    border-bottom: 1px solid var(--border-color);
+                    border-bottom: 1px solid var(--tree-border);
                     border-left: 4px solid #FFF;
                 }
                 &::after {
@@ -198,7 +198,7 @@
                     height: 1rem;
                     border-bottom: unset;
                     border-right: unset;
-                    border-top: 1px solid var(--border-color);
+                    border-top: 1px solid var(--tree-border);
                     border-left: 4px solid #FFF;
                 }
 
@@ -241,11 +241,11 @@
     .dark {
         #hierarchy-editor {
             [data-rem-container-tags~="tree"], %tree-dark {
-                background-color: #2F3437;
+                background-color: var(--tree-bg-dark);
 
                 #hierarchy-editor {
                     .TreeNode {
-                        border-color: var(--border-color-dark);
+                        border-color: var(--tree-border-dark);
                     }
                 }
 
@@ -258,32 +258,32 @@
                         &::before {
                             content: "";
                             width: 28px;
-                            background-color: var(--darkmode-background);
+                            background-color: var(--tree-bg-dark);
                             height: 100%;
                             position: absolute;
                             z-index: 2;
                             left: -2px;
-                            border-top: 1px solid var(--border-color-dark);
+                            border-top: 1px solid var(--tree-border-dark);
                             margin-top: 16px;
                         }
                     }
                 }
                 div.tree-node--parent {
                     &::before {
-                        background-color: var(--darkmode-background) !important;
+                        background-color: var(--tree-bg-dark) !important;
                     }
                 }
                 div.tree-node--children {
                     .tree-node-container:only-child {
                         &::before {
-                            border-bottom: 5rem solid var(--darkmode-background);
-                            border-left: 27px solid var(--darkmode-background);
+                            border-bottom: 5rem solid var(--tree-bg-dark);
+                            border-left: 27px solid var(--tree-bg-dark);
                             top: 0;
                         }
                     }
                 }
                 div.tree-node--children:not(.tree-node--children:empty) {
-                    border-left: 1px solid var(--border-color-dark);
+                    border-left: 1px solid var(--tree-border-dark);
                     // Crumbs Remover
                     &::before {
                         content: "";
@@ -296,8 +296,8 @@
                         height: 1rem;
                         border-top: unset;
                         border-right: unset;
-                        border-bottom: 1px solid var(--border-color-dark);
-                        border-left: 4px solid var(--darkmode-background);
+                        border-bottom: 1px solid var(--tree-border-dark);
+                        border-left: 4px solid var(--tree-bg-dark);
                     }
                     &::after {
                         content: "";
@@ -310,8 +310,8 @@
                         height: 1rem;
                         border-bottom: unset;
                         border-right: unset;
-                        border-top: 1px solid var(--border-color-dark);
-                        border-left: 4px solid var(--darkmode-background);
+                        border-top: 1px solid var(--tree-border-dark);
+                        border-left: 4px solid var(--tree-bg-dark);
                     }
                 }
             }
@@ -321,13 +321,13 @@
 
 [data-rem-container-tags~="treec"] {
     @extend %tree;
-    border: 0.1rem solid var(--border-color);
+    border: 0.1rem solid var(--tree-border);
     border-radius: 4px;
 }
 .dark {
     [data-rem-container-tags~="treec"] {
         @extend %tree-dark;
-        border: 0.1rem solid var(--border-color-dark);
+        border: 0.1rem solid var(--tree-border-dark);
     }
 }
 
@@ -343,7 +343,6 @@
     &[data-rem-container-tags~="w800"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 800px;}
     &[data-rem-container-tags~="w900"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 900px;}
     &[data-rem-container-tags~="w1000"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 1000px;}
-
     [data-rem-container-tags~="w100"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 100px;}
     [data-rem-container-tags~="w200"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 200px;}
     [data-rem-container-tags~="w300"] > div.tree-node--children > div.animate-zoom-into-bullet > div.tree-node--parent {min-width: 300px;}
