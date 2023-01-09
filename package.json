@@ -1,7 +1,12 @@
 {
+  "author": {
+    "name": "Min-Ki Park",
+    "email": "contact@browneyedsoul.click",
+    "url": "https://browneyedsoul.click/"
+  },
   "private": true,
   "name": "remnote-remtree",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "scripts": {
     "check-types": "tsc",
