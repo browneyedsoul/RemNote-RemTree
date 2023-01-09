@@ -6,9 +6,13 @@
 
 ![details](https://github.com/browneyedsoul/RemNote-RemTree/raw/main/public/1.webp)
 
+## Available Power-up Tags
+
+- Tag Name : `tree` / `treec`
+
 ## Quick Start Guide
 
-1. Create a Rem hierarchy like this:
+① Create a Rem hierarchy like this:
 
 - Grand Parent 1 
     - Child 1
@@ -18,10 +22,4 @@
         - Grandchild 3
         - Grandchild 4
 
-2. Tag the root of the hierarchy ("Grand Parent 1") with a tag called `tree`.
-
-
-## Available Tags
-
-- Tag Name : `tree` / `treec`
-
+② Tag the root of the hierarchy ("Grand Parent 1") with Slash command `/` or `//` → find `tree` or `treec` → return(Enter)
