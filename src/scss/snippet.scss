@@ -101,18 +101,19 @@
                     // }
                 }
                 &:last-of-type {
-                    > div.tree-node--parent:not(.tree-node--parent.tree-node--automatic-search-portal-header) {
+                    > div.tree-node--parent:not(.portal-tree-node-box .tree-node--parent) {
                         align-items: flex-start;
 
                         &::before {
                             content: "";
                             width: 28px;
-                            // background-color: $tree-bg;
+                            background-color: $tree-bg;
                             height: 100%;
                             position: absolute;
-                            z-index: -1;
+                            z-index: 1;
                             left: -2px;
                             margin-top: 16px;
+                            border-top: 1px solid $tree-border;
                         }
                     }
                 }
@@ -225,7 +226,7 @@
                         }
                     }
                 }
-            }   
+            }
         }
     }
 }
