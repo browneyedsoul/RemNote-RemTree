@@ -6,11 +6,11 @@
   "repoUrl": "https://github.com/browneyedsoul/RemNote-RemTree",
   "version": {
     "major": 1,
-    "minor": 1,
+    "minor": 2,
     "patch": 0
   },
   "theme": [],
-  "enableOnMobile": true,
+  "enableOnMobile": false,
   "description": "Structure your thoughts easily with Rem Tree!",
   "requestNative": true,
   "requiredScopes": [
