@@ -168,12 +168,14 @@
                     // Crumbs Remover
                     &::before {
                         content: "";
-                        padding-right: 24px;
+                        width: 2.5rem;
+                        background-color: $tree-bg;
+                        padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
                         z-index: 1;
                         top: 0;
-                        left: -0.15rem;
+                        left: -1.5rem;
                         height: 1rem;
                         border-top: unset;
                         border-right: unset;
