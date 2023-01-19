@@ -154,6 +154,10 @@
                 }
             }
             div.tree-node--children {
+                padding-left: unset;
+                > div {
+                    padding-left: 11.5px;
+                }
                 .backlink-counter {
                     opacity: .4;
                 }
