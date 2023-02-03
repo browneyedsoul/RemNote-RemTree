@@ -41,6 +41,7 @@
                 white-space: pre;
             }
             .rem {
+                background-color: $tree-bg;
                 min-width: calc(100% + 1rem);
                 .EditorContainer {
                     position: relative;
