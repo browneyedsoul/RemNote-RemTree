@@ -13,6 +13,7 @@ async function onActivate(plugin: ReactRNPlugin) {
         console.log("Rem Tree Installed");
       })
       .catch((error) => console.error(error));
+    await plugin.app.registerCSS('rem-tree', TreeCSS);
   } catch (error) {
     await fetch("https://raw.githubusercontent.com/browneyedsoul/RemNote-RemTree/main/src/snippet.css")
       .then((response) => response.text())
@@ -21,9 +22,8 @@ async function onActivate(plugin: ReactRNPlugin) {
         console.log("Rem Tree Installed from cdn");
       })
       .catch((error) => console.error(error));
+    await plugin.app.registerCSS('rem-tree', TreeCSS);
   }
-  
-  await plugin.app.registerCSS("rem-tree", TreeCSS);
   
   await plugin.app.registerPowerup("Tree", REMTREE_POWERUP, "A Power-up Block for decorating texts", { slots: [] });
   await plugin.app.registerPowerup("Treec", REMTREEC_POWERUP, "A Power-up Block for decorating texts", { slots: [] });
