@@ -18,6 +18,20 @@
     $tree-border,
     $tree-portal-bg
 ) {
+    [data-document-tags~="tree"],
+    [data-document-tags~="treec"] {
+        [data-rem-container-tags~="tree"],
+        [data-rem-container-tags~="treec"] {
+            > div {
+                > div {
+                    flex-direction: row !important;
+                    &:not([data-rem-container-id]) {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
     [data-rem-container-tags~="treec"] {
         border: 0.1rem solid $tree-border;
         border-radius: 4px;
@@ -33,7 +47,7 @@
             flex-direction: row;
             line-height: 160%;
             margin: 0.5rem 0 0.5rem 1.6rem;
-            padding: 1rem 1rem 1rem 0;
+            padding: 1rem 1rem 1rem 1.25rem;
             overflow-x: visible;
             overflow-y: hidden;
             white-space: pre;
