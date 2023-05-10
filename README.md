@@ -20,6 +20,4 @@
 
 ② Tag the root of the hierarchy ("Grand Parent 1") with Slash command `/` or `//` → find `Tree` → return(Enter). You can also apply the keyboard shortcut for easy entry (DEF. `⌥`+`⇧`+`t`).
 
-③ `Tree` command is used for switching among `Tree`, `Treec` state which has border line around a Tree and non-existing state
-
-The `Tree` command is also used to toggle between different states: `Tree,` which displays the tree with no border lines; `Treec,` which displays the tree with border lines around each node; and `non-existing` state, which removes the tree related power-up tag altogether.
+③ The `Tree` command is also used to toggle between different states: `Tree,` which displays the tree with no border lines; `Treec,` which displays the tree with border lines around each node; and `non-existing` state, which removes the tree related power-up tag altogether.
