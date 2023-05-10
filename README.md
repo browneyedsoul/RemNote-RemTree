@@ -6,10 +6,6 @@
 
 ![details](https://github.com/browneyedsoul/RemNote-RemTree/raw/main/public/1.webp)
 
-## Available Power-up Tags
-
-- Tag Name : `tree` / `treec`
-
 ## Quick Start Guide
 
 ① Create a Rem hierarchy like this:
@@ -22,4 +18,8 @@
         - Grandchild 3
         - Grandchild 4
 
-② Tag the root of the hierarchy ("Grand Parent 1") with Slash command `/` or `//` → find `tree` or `treec` → return(Enter)
+② Tag the root of the hierarchy ("Grand Parent 1") with Slash command `/` or `//` → find `Tree` → return(Enter). You can also apply the keyboard shortcut for easy entry (DEF. `⌥`+`⇧`+`t`).
+
+③ `Tree` command is used for switching among `Tree`, `Treec` state which has border line around a Tree and non-existing state
+
+The `Tree` command is also used to toggle between different states: `Tree,` which displays the tree with no border lines; `Treec,` which displays the tree with border lines around each node; and `non-existing` state, which removes the tree related power-up tag altogether.
