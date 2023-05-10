@@ -1,10 +1,10 @@
-const { resolve } = require('path');
+const {resolve} = require('path');
 var glob = require('glob');
 var path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ESBuildMinifyPlugin } = require('esbuild-loader');
-const { ProvidePlugin, BannerPlugin } = require('webpack');
+const {ESBuildMinifyPlugin} = require('esbuild-loader');
+const {ProvidePlugin, BannerPlugin} = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
@@ -48,8 +48,8 @@ const config = {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
           'postcss-loader',
         ],
       },
@@ -80,7 +80,9 @@ const config = {
     }),
     new BannerPlugin({
       banner: (file) => {
-        return !file.chunk.name.includes(SANDBOX_SUFFIX) ? 'const IMPORT_META=import.meta;' : '';
+        return !file.chunk.name.includes(SANDBOX_SUFFIX)
+          ? 'const IMPORT_META=import.meta;'
+          : '';
       },
       raw: true,
     }),
@@ -88,8 +90,9 @@ const config = {
       patterns: [
         {from: 'public', to: ''},
         {from: 'README.md', to: ''},
-        {from: 'src/snippet.css', to: ''}
-      ]
+        {from: 'src/snippet.css', to: ''},
+        {from: 'src/App.css', to: ''},
+      ],
     }),
     fastRefresh,
   ].filter(Boolean),
