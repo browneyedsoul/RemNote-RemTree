@@ -22,5 +22,5 @@
 
 ③ The `Tree` command is also used to toggle between different states: 
 - `Tree,` which displays the tree with no border lines
-- `Treec,` which displays the tree with border lines whole tree structure 
+- `Treec,` which displays border line around whole the tree structure
 - `non-existing` state, which removes the tree related power-up tag altogether
