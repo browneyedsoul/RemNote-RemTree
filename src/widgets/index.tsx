@@ -45,25 +45,25 @@ async function onActivate(plugin: ReactRNPlugin) {
     action: async () => {
       const rem = await plugin.focus.getFocusedRem();
       const remTag = (await rem?.getTagRems()) || [];
-      const remTagID = remTag[0]?._id;
-
-      const remTree = await plugin.powerup.getPowerupByCode(REMTREE_POWERUP);
-      const remTreec = await plugin.powerup.getPowerupByCode(REMTREEC_POWERUP);
-
-      const [remTreeid, remTreecid] = [await remTree?._id, await remTreec?._id];
-
-      switch (remTagID) {
+      const remTagText = remTag.filter(
+        (item) =>
+          item.text.toString() === 'Tree' || item.text.toString() === 'Treec'
+      );
+      const remTarget = await remTagText[0]?.text.toString();
+      
+      switch (remTarget) {
         case undefined:
           await rem?.addPowerup(REMTREE_POWERUP);
           break;
-        case remTreeid:
+        case 'Tree':
           await rem?.removePowerup(REMTREE_POWERUP);
           await rem?.addPowerup(REMTREEC_POWERUP);
           break;
-        case remTreecid:
+        case 'Treec':
           await rem?.removePowerup(REMTREEC_POWERUP);
           break;
         default:
+          await rem?.addPowerup(REMTREE_POWERUP);
           break;
       }
     },
