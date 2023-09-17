@@ -1,4 +1,4 @@
-import {declareIndexPlugin, ReactRNPlugin} from '@remnote/plugin-sdk';
+import { declareIndexPlugin, ReactRNPlugin } from '@remnote/plugin-sdk';
 
 export const [REMTREE_POWERUP, REMTREEC_POWERUP] = [
   'remtree_powerup',
@@ -28,13 +28,13 @@ async function onActivate(plugin: ReactRNPlugin) {
     'Tree',
     REMTREE_POWERUP,
     'A Power-up Block for decorating texts',
-    {slots: []}
+    { slots: [] }
   );
   await plugin.app.registerPowerup(
     'Treec',
     REMTREEC_POWERUP,
     'A Power-up Block for decorating texts',
-    {slots: []}
+    { slots: [] }
   );
 
   await plugin.app.registerCommand({
@@ -50,7 +50,7 @@ async function onActivate(plugin: ReactRNPlugin) {
           item.text.toString() === 'Tree' || item.text.toString() === 'Treec'
       );
       const remTarget = await remTagText[0]?.text.toString();
-      
+
       switch (remTarget) {
         case undefined:
           await rem?.addPowerup(REMTREE_POWERUP);
