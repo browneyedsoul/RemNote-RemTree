@@ -115,7 +115,7 @@
                     //     }
                     // }
                 }
-                &:last-of-type {
+                &:nth-last-of-type(2) {
                     > div.tree-node--parent:not(.portal-tree-node-box .tree-node--parent) {
                         align-items: flex-start;
 
@@ -245,6 +245,11 @@
                         div.tree-node--children:only-of-type {
                             display: none;
                         }
+                    }
+                }
+                &:has(> div.absolute:only-of-type) {
+                    &::before {
+                        border-bottom: unset;
                     }
                 }
             }
