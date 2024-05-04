@@ -9,7 +9,6 @@ async function onActivate(plugin: ReactRNPlugin) {
   let TreeCSS: string;
 
   try {
-    await fetch('snippet.css');
     const response = await fetch('snippet.css');
     TreeCSS = await response.text();
     console.log('Rem Tree Installed');
