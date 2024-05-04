@@ -46,7 +46,7 @@
             display: flex;
             flex-direction: row;
             line-height: 160%;
-            margin: 0.5rem 0 0.5rem 1.6rem;
+            margin: 0.5rem 0 0.5rem .2rem;
             padding: 1rem 1rem 1rem 1.25rem;
             overflow-x: visible;
             overflow-y: hidden;
@@ -176,10 +176,11 @@
                 .backlink-counter {
                     opacity: .4;
                 }
-                &:empty {
-                    border-left: unset;  // Border Declutter
+                &:empty,
+                &:has(> div.absolute:only-child) {
+                    border-left: unset !important;  // Border Declutter
                 }
-                &:not(.tree-node--children:empty) {
+                &:not(.tree-node--children:empty):not(.tree-node--children:has(> div.absolute:only-child)) {
                     display: inline-block;
                     z-index: 0;
                     border-left: 1px solid $tree-border;
@@ -187,7 +188,7 @@
                     // Crumbs Remover
                     &::before {
                         content: "";
-                        width: 2.5rem;
+                        width: 2.6rem;
                         background-color: $tree-bg;
                         padding-right: 4px;
                         padding-top: 0;
@@ -265,7 +266,7 @@
 );
 .dark {
     @include RemTree(
-        var(--tree-bg-dark), 
+        var(--rn-colors-gray-0),
         var(--tree-scroll-bg-dark), 
         var(--tree-scroll-thumb-bg-dark),
         var(--tree-border-dark), 
