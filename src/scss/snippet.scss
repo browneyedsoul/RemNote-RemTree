@@ -97,6 +97,15 @@
             .rem-button__container {
                 z-index: 5;
             }
+            .rem-container--header-1 {
+                top: -.35rem;
+            }
+            .rem-container--header-2 {
+                top: -.225rem;
+            }
+            .rem-container--header-3 {
+                top: -.15rem;
+            } 
             .animate-zoom-into-bullet {
                 display: flex;
                 flex-direction: row;
